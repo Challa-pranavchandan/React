@@ -1,16 +1,23 @@
-# React + Vite
+const [length,setlength]=useState(8)
+    const [num,setnum]=useState(true)
+    const [chare,setchare]=useState(false)
+    const [password,setpassword]=usestate("")
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+    const passwordGenerator =useCallback(()=>{
+      let pass=""
+      let str="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+      if(num){str+="0123456789"}
+      if(char){str+="!@#$%^&*()~`"}
+      for (let i = 1; i <= length; i++) {
+        let char =Math.floor(Math.random()*str.length+1)
+        pass = str.charAt(char)
 
-## React Compiler
+      }
+      setpassword(pass)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+    },[length,num,char,setpassword])
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+

@@ -1,3 +1,2 @@
-Bckground changer
-
-use state hook was used to change the bg 
+Random password generator 
+usage of different hook i.e useref,useEffect,useState 
